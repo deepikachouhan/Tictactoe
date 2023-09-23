@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
+  <style>
+    .col-4:hover{
+      background-color: rgb(69, 154, 227);
+    }
+.br-0{
+    border-right: 0;
+}
+
+.bl-0{
+    border-left: 0;
+}
+
+.bt-0{
+    border-top: 0;
+}
+
+.bb-0{
+    border-bottom: 0;
+}
+
+#btn1{
+  font-size: large;
+  padding: 15px 30px;
+  border-radius: 5px;
+}
+#btn2{
+  font-size: large;
+  padding: 15px 30px;
+  border-radius: 5px;
+}
+
+.first{
+    border: 2px solid white;
+     height: 120px;
+}
+#colo1,#colo2,#colo3,#colo4,#colo5,#colo6,#colo7,#colo8,#colo9{
+   
+   width: 120px;
+   height: 120px;
+   color: white;
+   font-size: 80px;
+   text-align: center;
+}
+  </style>
+</head>
+<body style="background: linear-gradient(45deg, pink, blue, rgb(28, 184, 158), rgb(203, 86, 203), black)">
+  
+    <div class="container" style="margin-left: 250px; margin-top: 40px;">
+      <button type="button" class="btn btn-success" id="btn1" onclick="game()">Start the Game</button>
+      <button type="button" class="btn btn-primary" id="btn2"onclick="fun()" >Restart the Game</button>
+      
+    <div class="row" id="hello" style="border: 2px solid white; width: 35%; margin-top: 100px; margin-left:400px; ">
+        <div class="first col-sm-4"   ><input  id="check1" type="checkbox"  style="display: none;"><label onclick="func1()" id="colo1" for="check1" ></label></div>
+        <div  class="first col-sm-4"  ><label onclick="func2()"  id="colo2" for="check1"></label></div>
+        <div class="first col-sm-4"  ><label onclick="func3()" id="colo3" for="check1" ></label></div>
+        <div class="first col-sm-4"  ><label  onclick="func4()" id="colo4" for="check1" ></label></div>
+        <div class="first col-sm-4"  ><label onclick="func5()" id="colo5" for="check1" ></label></div>
+        <div class="first col-sm-4"  ><label onclick="func6()" id="colo6" for="check1" ></label></div>
+        <div class="first col-sm-4"  ><label onclick="func7()" id="colo7" for="check1" ></label></div>
+        <div class="first col-sm-4"  ><label onclick="func8()" id="colo8" for="check1" ></label></div>
+        <div class="first col-sm-4" ><label onclick="func9()" id="colo9"  for="check1" ></label></div>
+    </div>
+
+    <div id="new" style="border: 4px solid rgb(232, 225, 225); width: 35%; height: 300px; margin-top: 100px; margin-left: 400px; display: none; font-size: 100px; color: white;padding-top: 40px; padding-left: 40px;">
+
+    </div>
+
+    
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MssP1UyJoMp4YLEuNSfAP+Jcn/tWtIaVM" crossorigin="anonymous"></script>
+
+<script>
+
+  
+var first = document.getElementById("colo1")
+var second = document.getElementById("colo2")
+var third = document.getElementById("colo3")
+var fourth = document.getElementById("colo4")
+var fifth = document.getElementById("colo5")
+var sixth = document.getElementById("colo6")
+var seventh = document.getElementById("colo7")
+var eight = document.getElementById("colo8")
+var nine = document.getElementById("colo9")
+
+var check = document.getElementById("check1")
+
+
+
+function game(){
+    document.getElementById("btn1").innerHTML="Game Start";
+    
+}
+
+function fun(){
+    document.get.getElementById("btn2").innerHTML="Restart"
+}
+
+function func1() {
+
+    if (check.checked) {
+        first.innerHTML = "O"
+
+    }
+    else {
+        first.innerHTML = "X"
+    }
+    
+
+
+    if (first.innerHTML=="X" && second.innerHTML =="X" &&  third.innerHTML=="X") {
+        document.getElementById("new").style.display="block"
+        document.getElementById("hello").style.display="none"
+        document.getElementById("new").innerHTML="winner1"
+     }
+    else if(first.innerHTML  =="O" && second.innerHTML =="O" &&  third.innerHTML=="O"){
+        document.getElementById("new").style.display="block"
+        document.getElementById("hello").style.display="none"
+        document.getElementById("new").innerHTML="winner2"
+  }
+    if (first.innerHTML=="X" && fifth.innerHTML =="X" &&  nine.innerHTML=="X") {
+        document.getElementById("new").style.display="block"
+        document.getElementById("hello").style.display="none"
+        document.getElementById("new").innerHTML="winner1"
+ }
+    else if(first.innerHTML  =="O" && fifth.innerHTML =="O" &&  nine.innerHTML=="O"){
+        document.getElementById("new").style.display="block"
+        document.getElementById("hello").style.display="none"
+        document.getElementById("new").innerHTML="winner2"
+}
+if (first.innerHTML=="X" && fourth.innerHTML =="X" &&  seventh.innerHTML=="X") {
+    document.getElementById("new").style.display="block"
+    document.getElementById("hello").style.display="none"
+    document.getElementById("new").innerHTML="winner1"
+ }
+else if(first.innerHTML  =="O" && fourth.innerHTML =="O" &&  seventh.innerHTML=="O"){
+    document.getElementById("new").style.display="block"
+        document.getElementById("hello").style.display="none"
+        document.getElementById("new").innerHTML="winner2"
+}
+}
+ function func2() {
+
+   if (check.checked) {
+         second.innerHTML = "O"
+
+     }
+    else {
+         second.innerHTML = "X"
+    }
+
+    if (second.innerHTML=="X" && fifth.innerHTML =="X" &&  eight.innerHTML=="X") {
+        document.getElementById("new").style.display="block"
+        document.getElementById("hello").style.display="none"
+        document.getElementById("new").innerHTML="winner1"
+     }
+    else if(second.innerHTML  =="O" && fifth.innerHTML =="O" &&  eight.innerHTML=="O"){
+        document.getElementById("new").style.display="block"
+        document.getElementById("hello").style.display="none"
+        document.getElementById("new").innerHTML="winner2"
+    }
+   
+    if (first.innerHTML=="X" && second.innerHTML =="X" &&  third.innerHTML=="X") {
+        document.getElementById("new").style.display="block"
+        document.getElementById("hello").style.display="none"
+        document.getElementById("new").innerHTML="winner1"
+     }
+    else if(first.innerHTML  =="O" && second.innerHTML =="O" &&  third.innerHTML=="O"){
+        document.getElementById("new").style.display="block"
+        document.getElementById("hello").style.display="none"
+        document.getElementById("new").innerHTML="winner2"
+ }}
+ function func3() {
+
+     if (check.checked) {
+         third.innerHTML = "O"
+
+     }
+     else {
+         third.innerHTML = "X"
+     }
+     if (first.innerHTML=="X" && second.innerHTML =="X" &&  third.innerHTML=="X") {
+        document.getElementById("new").style.display="block"
+        document.getElementById("hello").style.display="none"
+        document.getElementById("new").innerHTML="winner1"
+     }
+    else if(first.innerHTML  =="O" && second.innerHTML =="O" &&  third.innerHTML=="O"){
+        document.getElementById("new").style.display="block"
+        document.getElementById("hello").style.display="none"
+        document.getElementById("new").innerHTML="winner2"
+ }
+    if (sixth.innerHTML=="X" && nine.innerHTML =="X" &&  third.innerHTML=="X") {
+        document.getElementById("new").style.display="block"
+        document.getElementById("hello").style.display="none"
+        document.getElementById("new").innerHTML="winner1"
+ }
+    else if(sixth.innerHTML  =="O" && nine.innerHTML =="O" &&  third.innerHTML=="O"){
+        document.getElementById("new").style.display="block"
+        document.getElementById("hello").style.display="none"
+        document.getElementById("new").innerHTML="winner2"
+}
+if (third.innerHTML=="X" && fifth.innerHTML =="X" &&  seventh.innerHTML=="X") {
+    document.getElementById("new").style.display="block"
+        document.getElementById("hello").style.display="none"
+        document.getElementById("new").innerHTML="winner1"
+ }
+else if(third.innerHTML  =="O" && fifth.innerHTML =="O" &&  seventh.innerHTML=="O"){
+    document.getElementById("new").style.display="block"
+        document.getElementById("hello").style.display="none"
+        document.getElementById("new").innerHTML="winner2"
+}}
+ function func4() {
+
+     if (check.checked) {
+        fourth.innerHTML = "O"
+
+     }
+     else {
+         fourth.innerHTML = "X"
+     }
+     if (first.innerHTML=="X" && fourth.innerHTML =="X" &&  seventh.innerHTML=="X") {
+        document.getElementById("new").style.display="block"
+        document.getElementById("hello").style.display="none"
+        document.getElementById("new").innerHTML="winner1"
+     }
+    else if(first.innerHTML  =="O" && fourth.innerHTML =="O" &&  seventh.innerHTML=="O"){
+        document.getElementById("new").style.display="block"
+        document.getElementById("hello").style.display="none"
+        document.getElementById("new").innerHTML="winner2"
+     
+ }
+ if (fourth.innerHTML=="X" && fifth.innerHTML =="X" &&  sixth.innerHTML=="X") {
+    document.getElementById("new").style.display="block"
+        document.getElementById("hello").style.display="none"
+        document.getElementById("new").innerHTML="winner1"
+ }
+else if(fourth.innerHTML  =="O" && fifth.innerHTML =="O" &&  sixth.innerHTML=="O"){
+    document.getElementById("new").style.display="block"
+    document.getElementById("hello").style.display="none"
+    document.getElementById("new").innerHTML="winner2"
+}}
+ function func5() {
+
+    if (check.checked) {
+         fifth.innerHTML = "O"
+
+     }
+     else {
+         fifth.innerHTML = "X"
+     }
+     if (first.innerHTML=="X" && fifth.innerHTML =="X" &&  nine.innerHTML=="X") {
+        document.getElementById("new").style.display="block"
+        document.getElementById("hello").style.display="none"
+        document.getElementById("new").innerHTML="winner1"
+     }
+    else if(first.innerHTML  =="O" && fifth.innerHTML =="O" &&  nine.innerHTML=="O"){
+        document.getElementById("new").style.display="block"
+        document.getElementById("hello").style.display="none"
+        document.getElementById("new").innerHTML="winner2"
+
+ }
+ if (fifth.innerHTML=="X" && seventh.innerHTML =="X" &&  third.innerHTML=="X") {
+    document.getElementById("new").style.display="block"
+    document.getElementById("hello").style.display="none"
+    document.getElementById("new").innerHTML="winner1"
+ }
+else if(fifth.innerHTML  =="O" && seventh.innerHTML =="O" &&  third.innerHTML=="O"){
+    document.getElementById("new").style.display="block"
+        document.getElementById("hello").style.display="none"
+        document.getElementById("new").innerHTML="winner2"
+
+}
+if (fifth.innerHTML=="X" && second.innerHTML =="X" &&  eight.innerHTML=="X") {
+    document.getElementById("new").style.display="block"
+        document.getElementById("hello").style.display="none"
+        document.getElementById("new").innerHTML="winner1"
+ }
+else if(fifth.innerHTML  =="O" && second.innerHTML =="O" &&  eight.innerHTML=="O"){
+    document.getElementById("new").style.display="block"
+        document.getElementById("hello").style.display="none"
+        document.getElementById("new").innerHTML="winner2"}
+    if (fourth.innerHTML=="X" && fifth.innerHTML =="X" &&  sixth.innerHTML=="X") {
+        document.getElementById("new").style.display="block"
+        document.getElementById("hello").style.display="none"
+        document.getElementById("new").innerHTML="winner1"
+     }
+    else if(fourth.innerHTML=="O" && fifth.innerHTML =="O" &&  sixth.innerHTML=="O") {
+        document.getElementById("new").style.display="block"
+        document.getElementById("hello").style.display="none"
+        document.getElementById("new").innerHTML="winner2"
+
+
+}}
+ function func6() {
+
+     if (check.checked) {
+         sixth.innerHTML = "O"
+
+     }
+     else {
+         sixth.innerHTML = "X"
+     }
+     if (fourth.innerHTML=="X" && fifth.innerHTML =="X" &&  sixth.innerHTML=="X") {
+        document.getElementById("new").style.display="block"
+        document.getElementById("hello").style.display="none"
+        document.getElementById("new").innerHTML="winner1"
+     }
+    else if(fourth.innerHTML=="O" && fifth.innerHTML =="O" &&  sixth.innerHTML=="O") {
+        document.getElementById("new").style.display="block"
+        document.getElementById("hello").style.display="none"
+        document.getElementById("new").innerHTML="winner2"
+    
+ }
+ if (third.innerHTML=="X" && nine.innerHTML =="X" &&  sixth.innerHTML=="X") {
+    document.getElementById("new").style.display="block"
+    document.getElementById("hello").style.display="none"
+    document.getElementById("new").innerHTML="winner1"}
+else if(third.innerHTML=="O" && nine.innerHTML =="O" &&  sixth.innerHTML=="O") {
+    document.getElementById("new").style.display="block"
+        document.getElementById("hello").style.display="none"
+        document.getElementById("new").innerHTML="winner2"
+}}
+ function func7() {
+
+     if (check.checked) {
+         seventh.innerHTML = "O"
+
+     }
+     else {
+         seventh.innerHTML = "X"
+     }
+     if (seventh.innerHTML=="X" && fourth.innerHTML =="X" &&  first.innerHTML=="X") {
+        document.getElementById("new").style.display="block"
+        document.getElementById("hello").style.display="none"
+        document.getElementById("new").innerHTML="winner1"
+     }
+    else if(seventh.innerHTML=="O" && fourth.innerHTML =="O" &&  first.innerHTML=="O") {
+        document.getElementById("new").style.display="block"
+        document.getElementById("hello").style.display="none"
+        document.getElementById("new").innerHTML="winner2"
+ }
+ if (seventh.innerHTML=="X" && eight.innerHTML =="X" &&  nine.innerHTML=="X") {
+    document.getElementById("new").style.display="block"
+    document.getElementById("hello").style.display="none"
+    document.getElementById("new").innerHTML="winner1"
+ }
+else if(seventh.innerHTML=="O" && eight.innerHTML =="O" &&  nine.innerHTML=="O") {
+    document.getElementById("new").style.display="block"
+        document.getElementById("hello").style.display="none"
+        document.getElementById("new").innerHTML="winner2"
+}
+if (seventh.innerHTML=="X" && fifth.innerHTML =="X" &&  third.innerHTML=="X") {
+    document.getElementById("new").style.display="block"
+        document.getElementById("hello").style.display="none"
+        document.getElementById("new").innerHTML="winner1"
+ }
+else if(seventh.innerHTML=="O" && fifth.innerHTML =="O" &&  third.innerHTML=="O") {
+    document.getElementById("new").style.display="block"
+    document.getElementById("hello").style.display="none"
+    document.getElementById("new").innerHTML="winner2"
+ 
+
+}}
+ function func8() {
+
+     if (check.checked) {
+         eight.innerHTML = "O"
+
+     }
+     else {
+         eight.innerHTML = "X"
+     }
+
+     if (second.innerHTML=="X" && fifth.innerHTML =="X" &&  eight.innerHTML=="X") {
+        document.getElementById("new").style.display="block"
+        document.getElementById("hello").style.display="none"
+        document.getElementById("new").innerHTML="winner1"
+     }
+    else if (second.innerHTML=="O" && fifth.innerHTML =="O" &&  eight.innerHTML=="O") {
+        document.getElementById("new").style.display="block"
+        document.getElementById("hello").style.display="none"
+        document.getElementById("new").innerHTML="winner2"
+     }
+     if (seventh.innerHTML=="X" && eight.innerHTML =="X" &&  nine.innerHTML=="X") {
+        document.getElementById("new").style.display="block"
+        document.getElementById("hello").style.display="none"
+        document.getElementById("new").innerHTML="winner1"
+     }
+    else if(seventh.innerHTML=="O" && eight.innerHTML =="O" &&  nine.innerHTML=="O") {
+        document.getElementById("new").style.display="block"
+        document.getElementById("hello").style.display="none"
+        document.getElementById("new").innerHTML="winner2"
+    }
+
+ }
+ function func9() {
+
+     if (check.checked) {
+         nine.innerHTML = "O"
+
+     }
+     else {
+         nine.innerHTML = "X"
+     }
+ 
+
+     if (sixth.innerHTML=="X" && nine.innerHTML =="X" &&  third.innerHTML=="X") {
+        document.getElementById("new").style.display="block"
+        document.getElementById("hello").style.display="none"
+        document.getElementById("new").innerHTML="winner1"
+     }
+        else if(sixth.innerHTML  =="O" && nine.innerHTML =="O" &&  third.innerHTML=="O"){
+            document.getElementById("new").style.display="block"
+            document.getElementById("hello").style.display="none"
+            document.getElementById("new").innerHTML="winner2"
+    }
+    
+ 
+    if (seventh.innerHTML=="X" && eight.innerHTML =="X" &&  nine.innerHTML=="X") {
+        document.getElementById("new").style.display="block"
+        document.getElementById("hello").style.display="none"
+        document.getElementById("new").innerHTML="winner1"
+     }
+    else if(seventh.innerHTML=="O" && eight.innerHTML =="O" &&  nine.innerHTML=="O") {
+        document.getElementById("new").style.display="block"
+        document.getElementById("hello").style.display="none"
+        document.getElementById("new").innerHTML="winner2"
+    }
+
+    if (first.innerHTML=="X" && fifth.innerHTML =="X" &&  nine.innerHTML=="X") {
+        document.getElementById("new").style.display="block"
+        document.getElementById("hello").style.display="none"
+        document.getElementById("new").innerHTML="winner1"
+     }
+        else if(first.innerHTML  =="O" && fifth.innerHTML =="O" &&  nine.innerHTML=="O"){
+            document.getElementById("new").style.display="block"
+            document.getElementById("hello").style.display="none"
+            document.getElementById("new").innerHTML="winner2"
+}}
+
+
+
+</script>
+</body>
+
+</html>
